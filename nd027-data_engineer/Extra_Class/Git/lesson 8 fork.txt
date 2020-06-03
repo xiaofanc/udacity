@@ -1,0 +1,13 @@
+fork
+This concept of "forking" is also different from "cloning". When you clone a repository, you get an identical copy of the repository. But cloning happens on your local machine and you clone a remote repository. When you fork a repository, a new duplicate copy of the remote repository is created. This new copy is also a remote repository, but it now belongs to you.
+
+Push/Pull To The Fork
+
+Review existing work
+$ git shortlog -s -n
+$ git log --author=Surma
+$ git log --author="Paul Lewis"
+$ git show 5966b66
+$ git log --grep=bug
+$ git log --grep bug
+$ git log --grep="border radius issue in Safari"

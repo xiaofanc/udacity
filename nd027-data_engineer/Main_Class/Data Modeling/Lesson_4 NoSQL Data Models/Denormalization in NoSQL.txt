@@ -1,0 +1,24 @@
+Apache Cassandra:
+- denormalization is must
+- no JOINs
+- optimized for fast writes
+- one table per query
+
+PRIMARY KEY:  
+PARTITION KEY + (CLUSTERING COL)
+- unique!!
+- hashing into number
+- data is distributed by partition key
+
+CLUSTERING COL
+- sort by ascending order
+
+Where
+limitation on select *
+- PARTITION KEY 
+- PARTITION KEY + (CLUSTERING COL)
+- PARTITION KEY + (CLUSTERING COL) + other cols
+- PARTITION KEY + other cols does not work
+- must use for queries
+- You can not try to access a column or a clustering column if you have not used the other defined clustering column
+- PRIMARY KEY must be used in WHERE in order

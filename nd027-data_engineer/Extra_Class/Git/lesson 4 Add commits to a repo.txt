@@ -1,0 +1,35 @@
+git add
+git add command is used to move files from the Working Directory to the Staging Index
+$ git add . (add all files)
+
+git rm --cached index.html
+git rm to remove the file from the Staging Index
+
+git commit:
+remove from staging area to repo
+$ git commit -m "Initial commit"
+
+git diff
+The git diff command can be used to see changes that have been made but haven't been committed
+$ git diff (same as git log -p)
+
+git ingore
+the .gitignore file is used to tell Git about the files that Git should not track. This file should be placed in the same directory that the .git directory is in.
+
+globbing
+Globbing lets you use special characters to match patterns/characters. In the .gitignore file, you can use the following:
+
+blank lines can be used for spacing
+# - marks line as a comment
+* - matches 0 or more characters
+? - matches 1 character
+[abc] - matches a, b, _or_ c
+** - matches nested directories - a/**/z matches
+a/z
+a/b/z
+a/b/c/z
+So if all of the 50 images are JPEG images in the "samples" folder, we could add the following line to .gitignore to have Git ignore all 50 images.
+
+samples/*.jpg
+
+

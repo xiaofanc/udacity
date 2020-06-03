@@ -1,0 +1,43 @@
+Upsert
+In RDBMS language, the term upsert refers to the idea of inserting a new row in an existing table, or updating the row if it already exists in the table. The action of updating or inserting has been described as "upsert".
+
+CREATE TABLE IF NOT EXISTS customer_address (
+    customer_id int PRIMARY KEY, 
+    customer_street varchar NOT NULL,
+    customer_city text NOT NULL,
+    customer_state text NOT NULL
+);
+
+INSERT into customer_address 
+VALUES
+    (432, '758 Main Street', 'Chicago', 'IL'
+);
+
+- UPDATE
+INSERT INTO customer_address (customer_id, customer_street, customer_city, customer_state)
+VALUES
+ (
+ 432, '923 Knox Street', 'Albany', 'NY'
+ ) 
+ON CONFLICT (customer_id) 
+DO NOTHING;
+
+
+INSERT INTO customer_address (customer_id, customer_street, customer_city, customer_state)
+VALUES
+    ( 432, '923 cv Street, Suite 1' , 'ABC', 'CA') ,
+    ( 431, '458 Knox Street, Suite 7' , 'ABC', 'CA') 
+
+ON CONFLICT (customer_id) 
+DO UPDATE
+    SET customer_street  = EXCLUDED.customer_street; // only update street
+
+
+INSERT INTO customer_address (customer_id, customer_street, customer_city, customer_state)
+VALUES
+    ( 432, '1840 cv Street' , 'ABC', 'CA') 
+
+ON CONFLICT (customer_id) 
+DO UPDATE
+SET (customer_id, customer_street, customer_city, customer_state) = (EXCLUDED.customer_id, EXCLUDED.customer_street, EXCLUDED.customer_city, EXCLUDED.customer_state);
+

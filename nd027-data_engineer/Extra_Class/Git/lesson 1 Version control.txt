@@ -1,0 +1,46 @@
+version control:
+git
+subversion(SVN)
+mercurial
+
+centralized: SVN
+distributed: git
+
+$ mkdir -p udacity-git-course/new-git-project && cd $_
+XiaofangChu new-git-project
+$ git init (create a new repo)
+$ ls -a
+$ cd ..
+XiaofangChu udacity-git-course
+$ git clone https://github.com/udacity/course-git-blog-project
+$ cd course-git-blog-project/
+$ git st
+$ git log
+$ git log --oneline
+....
+
+git init (create .git)
+git status
+git log
+git log --oneline
+git log --stat (show the files)
+git log -p (display the actual change)
+git log -p -w (ignore whitespace change)
+git log -p fdf5493 (show commits start at that)
+git show fdf5493 (only show one commit)
+git show
+git clone
+
+
+Navigating The Log
+If you're not used to a pager on the command line, navigating in Less can be a bit odd. Here are some helpful keys:
+
+to scroll down, press
+j or ↓ to move down one line at a time
+d to move by half the page screen
+f to move by a whole page screen
+to scroll up, press
+k or ↑ to move _up_ one line at a time
+u to move by half the page screen
+b to move by a whole page screen
+press q to quit out of the log (returns to the regular command prompt)

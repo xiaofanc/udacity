@@ -1,0 +1,35 @@
+amend
+$ git commit --amend
+update the most-recent commit instead of creating a new one.
+
+revert
+$ git revert <SHA-of-commit-to-revert>
+$ git revert db7e87a (it creates a new commit)
+
+reset
+Relative Commit References
+^ – indicates the parent commit
+~ – indicates the first parent commit
+the parent commit – the following indicate the parent commit of the current commit
+HEAD^
+HEAD~
+HEAD~1
+the grandparent commit – the following indicate the grandparent commit of the current commit
+HEAD^^
+HEAD~2
+the great-grandparent commit – the following indicate the great-grandparent commit of the current commit
+HEAD^^^
+HEAD~3
+
+$ git reset <reference-to-commit>
+- move the HEAD and current branch pointer to the referenced commit
+- erase commits
+- move committed changes to the staging index
+- unstage committed changes
+--mixed: move from repo to working directory
+--soft: move from repo to staging index
+--hard: move from repo to trash
+$ git reset --mixed HEAD
+
+git rm --cached new-git-project -f
+romove from staging area

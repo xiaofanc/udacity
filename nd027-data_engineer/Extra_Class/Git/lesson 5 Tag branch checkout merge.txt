@@ -1,0 +1,70 @@
+tag: (add a tag to a the most recent commit)
+$ git tag -a v1.0
+$ git tag (check the tag)
+$ git log --decorate
+$ git tag -d v1.0 (delete a tag)
+$ git tag -a v1.0 a87984 (add tag to commit with SHA a..)
+
+branch: 
+$ git branch (list all branch names in the repository)
+$ git branch sidebar (create a branch)
+
+checkout: swtitch branch
+$ git checkout sidebar
+$ git log --oneline --decorate
+$ git checkout -b XXX (create and switch)
+
+# dc0f54b (HEAD -> sidebar, tag: v1.0, master) change header in blog
+# 87a9427 Add .gitignore file
+# 4017fc5 second commit
+# c3c4f56 Initial commit
+
+It creates a new branch called alt-sidebar-loc and has it pointing at the commit with the SHA 42a69f
+$ git branch alt-sidebar-loc 42a69f
+
+delete a branch (you can't delete a branch that you're currently on)
+$ git branch -d sidebar
+
+$ git branch sidebar 5bfe5e7
+$ git log --oneline --decorate
+$ git checkout master
+
+edit content
+$ git diff -> $ git add . -> $ git commit -m "xxxx" -> $ git log --oneline --decorate
+
+Add Social Links
+$ git checkout -b footer master
+$ git log --oneline --decorate
+edit content
+$ git diff -> $ git add . -> $ git commit -m "xxxx" -> $ git log --oneline --decorate
+
+See All Branches At Once
+$ git log --oneline --decorate --graph --all
+
+Merging
+$ git merge <name-of-branch-to-merge-in>
+a.Fast-forward Merge
+– the branch being merged in must be ahead of the checked out branch. 
+since footer is directly ahead of master, this merge is one of the easiest merges to do. Merging footer into master will cause a Fast-forward merge. 
+undo merge:
+git reset --hard HEAD^
+$ git checkout master
+$ git merge footer
+$ git log --oneline --decorate --graph --all
+
+b.Regular merge:
+- two divergent branches are combined
+$ git merge sidebar
+
+A merge conflict happens when the same line or lines have been changed on different branches that are being merged.
+- locate and remove all lines with merge conflict indicators
+- determine what to keep
+- save the file(s)
+- stage the file(s)
+- make a commit
+
+
+
+
+
+

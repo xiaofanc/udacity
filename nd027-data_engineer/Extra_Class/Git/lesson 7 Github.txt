@@ -1,0 +1,43 @@
+$ git remote
+$ git remote -v
+
+new:
+$ mkdir my-travel-plans
+# create files
+# .gitignore to ingore...
+$ git init
+$ git add .
+$ git commit
+
+Remember that the git remote command is used to create and manage remote repositories. So I'll use the following command to create a connection from my local repository to the remote repository I just created on my GitHub account:
+$ git remote add origin https://github.com/xiaofanc/my-travel-plans.git
+$ git remote -v
+
+git push (local has new information)
+push the commits on the local repo to the remote
+$ git push <remote-shortname> <branch>
+$ git push -u origin master
+$ git log --oneline --graph --decorate --all
+
+git pull (remote has new information)
+Pull changes from a remote
+origin/master in the local repository is called a tracking branch because it's tracking the progress of the master branch on the remote repository that has the shortname "origin")
+$ git pull origin master
+- the commit(s) on the remote branch are copied to the local repository
+- the local tracking branch (origin/master) is moved to point to the most recent commit
+- the local tracking branch (origin/master) is merged into the local branch (master)
+
+Git fetch (remote and local both have new information)
+Git fetch is used to retrieve commits from a remote repository's branch but it does not automatically merge the local branch with the remote tracking branch after those commits have been received.
+- original/master and master in local does not merge
+$ git fetch origin master
+- the commit(s) on the remote branch are copied to the local repository
+- the local tracking branch (e.g. origin/master) is moved to point to the most recent commit
+
+One main point when you want to use git fetch rather than git pull is if your remote branch and your local branch both have changes that neither of the other ones has. In this case, you want to fetch the remote changes to get them in your local branch and then perform a merge manually. Then you can push that new merge commit back to the remote.
+
+
+
+
+
+

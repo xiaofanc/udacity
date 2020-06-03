@@ -1,0 +1,23 @@
+Operation Processes: OLTP track and update information; track inventory; Track financial transactions; Track shipment of customer orders
+
+Analytical Processes: OLAP Examine market segmentation over a period of time; Split customers into market segments for market optimization
+
+A data warehouse is designed to optimize data analysis processes and gather data from multiple sources. The first thing is ETL. Extract the data and from the source systems used for operations, transform the data and load it into a dimensional model.
+
+Dimensional modelling:
+transform 3NF to star schema
+fact tables: business events; metrics for analytic; quantifiable data or numeric data is the best candidate for a Fact table.
+dimension tables: who when where what.. features
+
+DVD rentals sample database:
+facts: rentals and payments - events
+dimensions: customer, staff, store, movie  
+
+Data marts:
+separate and smaller dimensional models for each department, which means each department has its own ETL process.
+
+Corporate Information Factory (CIF) build on a 3NF normalized database and then allow for documented data denormalization for Data Marts.
+
+OLAP cube: fact metrics with numbers of dimensions
+- slicing, rollup, drilldown, dice
+

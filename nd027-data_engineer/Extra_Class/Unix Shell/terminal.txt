@@ -1,0 +1,44 @@
+
+ls -l Documents/*.jpeg
+
+#move epub to books;
+mv Documents/*.epub Documents/Books
+
+mv Documents/Books/* Documents
+cd Documents; mv Books/*.epub .
+cd Documents/Books; mv * ..
+
+#download web page
+curl -o google.html -L 'http://google.com'
+curl -o dictionary.txt -L 'https://tinyurl.com/zeyq9vc'
+
+#cat
+cat dictionary.txt
+less dictionary.txt (/ to search)
+
+rm
+rm -i
+rmdir to remove directory
+
+#output all lines with Shell
+grep Shell ditionary.txt
+grep Shell ditionary.txt | less
+curl -L 'https://tinyurl.com/zeyq9vc' | grep fish | wc -l
+curl -L 'https://tinyurl.com/zeyq9vc' | grep -c fish 
+
+#match multiple
+grep -e '^Chapter \d' file
+egrep '^Chapter \d' file
+
+#variable
+number='one'
+echo $number
+echo $COLUMNS x $LINES
+echo $PATH
+PATH=$PATH: /add new directory
+echo $LOGNAME $PWD
+
+#.bash_profile
+subl .bash_profile
+#alias
+alias ll='ls -la'

@@ -1,0 +1,40 @@
+1NF:
+you need to remove any collections or list of data and break up the list of songs into individual rows.¶
+(1, "Amanda", "Sam", 2000, "Rubber Soul"),
+(1, "Amanda", "Sam", 2000, "Let it Be"),
+(2, "Toby", "Sam", 2000, "My Generation"),
+(3, "Max", "Bob", 2018, "Meet the Beatles"),
+(3, "Max", "Bob", 2018, "Help!"),
+
+2NF:
+While each of the records in the table is unique, our Primary key (transaction id) is not unique.
+Each table needs primary key
+Transaction_table
+(1, "Amanda", "Sam", 2000),
+(2, "Toby", "Sam", 2000),
+(3, "Max", "Bob", 2018),
+
+Album_table
+(1,1,"Rubber Soul"),
+(2,1,"Let it Be"),
+(3,2,"My Generation"),
+(4,3,"Meet the Beatles"),
+(5,3,"Help!")
+
+3NF: 
+Check our table for any transitive dependencies. HINT: Check the table for any transitive dependencies. Transactions can remove Cashier Name to its own table, called Employees, which will leave us with 3 tables.
+Transaction_table
+(1, "Amanda", 1, 2000),
+(2, "Toby", 1, 2000),
+(3, "Max", 2, 2018),
+
+Album_table
+(1, 1, 'Rubber Soul')
+(2, 1, 'Let it Be')
+(3, 2, 'My Generation')
+(4, 3, 'Meet the Beatles')
+(5, 3, 'Help!')
+
+Employee_table
+(1, 'Sam')
+(2, 'Bob')

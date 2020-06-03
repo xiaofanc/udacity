@@ -1,0 +1,23 @@
+Fact table:
+- measurements, metrics, and facts of a business process
+- events that happen; ints and numbers
+- How many units of products were bought? 
+
+Dimension table:
+- people, product, place and time
+- not used for analysis like day
+- The unique primary key for each Dimension table is included in the Fact table.
+- Where the product was bought? (Dim_Store table)
+- When the product was bought? (Dim_Date table)
+- What product was bought? (Dim_Product table)
+
+star schema
+- one or more fact tables referencing dimension tables
+- denormalized: data integrity problem  
+- faster aggregation
+
+snowflake schema
+- centralized fact table which are connected to multiple dimensions
+- multiple layers of relations
+- more normalized
+

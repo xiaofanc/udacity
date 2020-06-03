@@ -1,0 +1,22 @@
+When to use a NoSQL Database:
+•   Need to be able to store different data type formats: NoSQL was also created to handle different data configurations: structured, semi-structured, and unstructured data. JSON, XML documents can all be handled easily with NoSQL.
+•   Large amounts of data: NoSQL databases were created to be able to be horizontally scalable. The more servers/systems you add to the database the more data that can be hosted with high availability and low latency (fast reads and writes).
+•   Need horizontal scalability
+•   Need high throughput: fast reads and writes
+•   Need a flexible schema
+•   Need high availability: Relational databases have a single point of failure. When that database goes down, a failover to a backup system must happen and takes time.
+
+Distributed Databases: data are distributed to multiple machines
+
+Eventual consistency:
+since the data were copies in the distributed system, data may not be updated in all locations. Over infinite time, if no new changes are made that each copy of my data will be the same. 
+
+CAP Theorem:
+Consistency: Every read from the database gets the latest (and correct) piece of data or an error
+
+Availability: Every request is received and a response is given -- without a guarantee that the data is the latest update
+
+Partition Tolerance: The system continues to work regardless of losing network connectivity between nodes 
+
+Does Cassandra meet just Availability and Partition Tolerance in the CAP theorem?
+According to the CAP theorem, a database can actually only guarantee two out of the three in CAP. So supporting Availability and Partition Tolerance makes sense, since Availability and Partition Tolerance are the biggest requirements.

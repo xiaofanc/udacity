@@ -1,0 +1,7 @@
+Denormalization: increase read performance by having more copies of the data (to reduce joins)
+
+copies of data - data consistence 
+reads will be faster (select)
+writes will be slower (insert, update, delete)
+
+

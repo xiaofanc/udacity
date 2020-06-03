@@ -1,0 +1,10 @@
+Non-relational Database: has a simpler design, simpler horizontal scaling, and finer control of availability (Apache Cassandra (partition row store), MongoDB (document store), DynamoDB (key-value), Apache HBase (Wide Column Store))
+NoSQL is the language
+
+When to use a NoSQL Database:
+•   Need to be able to store different data type formats: NoSQL was also created to handle different data configurations: structured, semi-structured, and unstructured data. JSON, XML documents can all be handled easily with NoSQL.
+•   Large amounts of data: NoSQL databases were created to be able to be horizontally scalable. The more servers/systems you add to the database the more data that can be hosted with high availability and low latency (fast reads and writes).
+•   Need horizontal scalability
+•   Need high throughput: fast reads and writes
+•   Need a flexible schema
+•   Need high availability: Relational databases have a single point of failure. When that database goes down, a failover to a backup system must happen and takes time.

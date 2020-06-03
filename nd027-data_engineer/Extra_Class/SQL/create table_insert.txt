@@ -1,0 +1,28 @@
+create table if not exists address (
+id int primary key,
+street varchar not null,
+city   varchar not null,
+state  varchar not null
+);
+
+insert into address (id, street, city, state) 
+values
+    (1, '758 main street', 'chicago', 'IL'),
+    (2, '513 main street', 'san mateo', 'CA'),
+    (3, '513 E Santa street', 'san francisco', 'CA'),
+    (4, '3770 S figueroa street', 'los angeles', 'CA')
+    ;
+
+insert into address (id, street, city, state) 
+values
+    (1, '768 main street', 'chicago', 'IL')
+on conflict (id)
+do nothing;
+
+insert into address (id, street, city, state) 
+values
+    (1, '768 main street', 'ggggg', 'IL')
+on conflict (id)
+do update
+set street = EXCLUDED.street;
+

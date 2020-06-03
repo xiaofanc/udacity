@@ -1,0 +1,24 @@
+OLAP: online analytical processing
+Databases optimized for these workloads allow for complex analytical and ad hoc queries. This type of databases are optimized for reads. OLAP will heavily focus on aggregations.
+ex: how many shoes that were sold last week? aggregations 读更多
+
+OLTP: online transactional processing
+Databases optimized for these workloads allow for less complex queries in large volume. The types of queries for these databases are read, insert, update and delete. OLTP will have little aggregations.
+ex: the price of the shoes 写更多 更新参数
+
+For relational databases, you do not need to do your queries first, you can run queries based on the schemas and ERD.
+
+Structuring database
+Normalization: to reduce data redundancy and increase data integrity
+•   First Normal Form: atomic values (each cell contains unique and single value)
+•   Second NF: have reached 1NF, each table must have primary key
+•   Third NF: have reached 2NF, no transitive dependencies
+减少数据copy  able to update data in one place, using contraints to link tables
+如果我们想collect email address, add a table with a foreign key or add a column
+first normal form:
+- each cell has unique and single value
+- seperate relations into different tables
+- using foreign key to link tables
+- be able to add data without altering tables
+
+

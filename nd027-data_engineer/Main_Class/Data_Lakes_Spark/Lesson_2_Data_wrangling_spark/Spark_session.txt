@@ -1,0 +1,23 @@
+functional programming: Scala
+The PySpark API allows you to write programs in Spark and ensures that your code uses functional programming practices. Underneath the hood, the Python code uses py4j to make calls to the Java Virtual Machine (JVM).
+
+Spark context: entry point for spark functionality and connects the cluster with the application
+
+Spark Session: getOrCreate() return the old one if exists and modify the parameters to the new configurations
+
+read and write data into Spark
+
+Analysis:
+Imperative Programming: DataFrames and python
+Declarative Programming: SQL
+
+high-level API:
+Query Dataframes
+Spark SQL
+
+low-level API:
+RDD 
+
+https://databricks.com/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html
+
+

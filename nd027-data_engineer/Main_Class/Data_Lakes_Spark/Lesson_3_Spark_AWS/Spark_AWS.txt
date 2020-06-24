@@ -1,0 +1,21 @@
+Spark cluster managers:
+standalone mode
+mesos (shared)
+yarn (shared)
+
+cloud computing
+Amazon S3 will store the dataset.
+We rent a cluster of machines, i.e., our Spark Cluster, and it is located in AWS data centers. We rent these using AWS service called Elastic Compute Cloud (EC2).
+We log in from your local computer to this Spark cluster.
+Upon running our Spark code, the cluster will load the dataset from Amazon S3 into the cluster’s memory distributed across each machine in the cluster.
+
+EC2 - SSH key-pair - connect to the cluster
+EMR - create Cluster - M5
+
+You must have an Amazon Elastic Compute Cloud (Amazon EC2) key pair to connect to the nodes in your cluster over a secure channel using the Secure Shell (SSH) protocol. 
+Elastic Map Reduce(EMR) is a service that provides you EC2 instances with many big data tools like hadoop and Spark already installed and configured.
+
+alternate way to connect to AWS 
+- AWS CLI create an EMR cluster
+
+- allow EMR to accept incoming SSH protocol so your local machine can connect to your EMR cluster in the AWS Cloud

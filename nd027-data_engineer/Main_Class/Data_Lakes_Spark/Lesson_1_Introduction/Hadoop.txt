@@ -1,0 +1,18 @@
+Hadoop
+
+Hadoop MapReduce - a system for processing and analyzing large data sets in parallel.
+
+Hadoop YARN - a resource manager that schedules jobs across a cluster. The manager keeps track of what computer resources are available and then assigns those resources to specific tasks.
+
+Hadoop Distributed File System (HDFS) - a big data storage system that splits data into chunks and stores the chunks across a cluster of computers.
+
+HDFS uses MapReduce system as a resource manager to allow the distribution of the files across the hard drives within the cluster. Think of it as the MapReduce System storing the data back on the hard drives after completing all the tasks.
+
+How is Spark related to Hadoop?
+Spark, which is the main focus of this course, is another big data framework. Spark contains libraries for data analysis, machine learning, graph analysis, and streaming live data. Spark is generally faster than Hadoop. This is because Hadoop writes intermediate results to disk whereas Spark tries to keep intermediate results in memory whenever possible.
+
+The Hadoop ecosystem includes a distributed file storage system called HDFS (Hadoop Distributed File System). Spark, on the other hand, does not include a file storage system. You can use Spark on top of HDFS but you do not have to. Spark can read in data from other sources as well such as Amazon S3.
+
+Mapreduce: using 4 nodes cluster
+
+read files from HDFS (partition) -> Map processor (4 servers) -> each data is analyzed and converted into a (key, value) pair -> shuffled across the cluster (same key is moved to the same node) -> reduce (sum the values for the keys)

@@ -1,0 +1,49 @@
+create EMR cluster:
+aws emr create-cluster --name 'My Spark cluster' --use-default-roles  --emrfs Consistent=true --release-label emr-5.30.1 --instance-count 2 --applications Name=Spark Name=Zeppelin Name=Hive Name=Livy --ec2-attributes KeyName=Sparkcluster --instance-type m5.xlarge --instance-count 3 --log-uri s3://emrlogs/ --auto-terminate
+
+Setting up foxyproxy
+
+ssh -i ~/.ssh/Sparkcluster.pem -ND 8157 hadoop@ec2-34-223-93-255.us-west-2.compute.amazonaws.com
+
+ssh -i ~/.ssh/Sparkcluster.pem -ND 8157 ec2-34-223-93-255.us-west-2.compute.amazonaws.com
+
+ssh -i ~/.ssh/Sparkcluster.pem hadoop@ec2-34-223-93-255.us-west-2.compute.amazonaws.com
+
+aws emr describe-cluster --cluster-id <CLUSTER_ID FROM ABOVE>`
+
+create notebook in the EMR cluster (Spark in Jupyter notebooks):
+EMR: must have right Applicatin, environment: EC2-VPC, subnet, role policy
+
+submit python scripts into EMR cluster: 3.8
+
+Use data stored in s3 or
+copy from local to s3:
+aws s3 cp ~/Downloads/cities.csv s3://sparkifytest
+copy from Amazon S3 into HDFS on AWS EMR cluster?
+https://aws.amazon.com/premiumsupport/knowledge-center/copy-s3-hdfs-emr/
+under .aws dir:
+aws emr add-steps --cluster-id j-C31UWVCQIP4D --steps file://./myStep.json
+
+Use data stored in HDFS:
+copy from local to EMR:
+scp -i ~/.ssh/Sparkcluster.pem  ~/Downloads/reading-and-writing-to-amazons3/sparkify_log_small.json  hadoop@ec2-34-223-93-255.us-west-2.compute.amazonaws.com:/home/hadoop
+
+scp -i ~/.ssh/Sparkcluster.pem  ~/Downloads/cities.csv hadoop@ec2-34-223-93-255.us-west-2.compute.amazonaws.com:/home/hadoop
+
+spark-submit <filename>.py
+
+copy from EMR to HDFS:
+connect with EMR first
+hdfs dfs -mkdir /user/sparkify_data
+hdfs dfs -copyFromLocal sparkify_log_small.json  /user/sparkify_data/ 
+
+Resources:
+ssh -i ~/.aws/<YOUR_PEM_FILE>.pem hadoop@<YOUR IP> -ND 8157
+
+scp -i ~/.aws/Sparkcluster.pem hadoop@ec2-54-187-75-81.us-west-2.compute.amazonaws.com:/home/hadoop/
+
+aws emr socks --cluster-id j-2GCUJPBCW9GH7 --key-pair-file ~/.ssh/Sparkcluster.pem                    
+
+chmod 400 ~/.ssh/Sparkcluster.pem
+
+https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-ssh-tunnel.html

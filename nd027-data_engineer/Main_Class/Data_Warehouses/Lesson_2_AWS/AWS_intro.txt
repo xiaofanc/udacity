@@ -1,0 +1,22 @@
+create a AWS account with promo code
+
+Delete a Redshift Cluster
+Make sure to delete your cluster each time you're finished working to avoid large, unexpected costs. You can always launch a new cluster, so don't leave it running overnight or throughout the week if you don't need to.
+
+EC2: server (compute unit + storage unit)
+create an IAM role
+create security group
+launch a redshift role
+create an IAM user
+create s3 bucket (s3 like hard drive) 
+upload to s3
+create a PostgreSQL RDS (create database)
+
+S3 offers a very reliable, scalable and worry-free storage solution, but it only offers storage not processing power.
+
+Key recommendations for using your AWS credits wisely:
+Delete your Amazon Redshift cluster each time you're finished working.
+Use a smaller subset of your data while you code and debug on AWS, and only execute with the full dataset on AWS as a final test of your code.
+
+PostgreSQL RDS  - EC2 server - redshift
+                (s3 storage)

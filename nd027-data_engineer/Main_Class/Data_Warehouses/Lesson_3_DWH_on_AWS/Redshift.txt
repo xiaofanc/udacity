@@ -1,0 +1,13 @@
+DWH - Cloud - Cloud-managed - SQL - Redshift(SQL columnar parallel)
+
+redshift ETL
+s3 -> redshift
+
+each Redshift slice will act as a separate worker and will use ingest the split of a file in parallel, so the process will complete much faster
+
+achieve IaC on AWS
+- AWS-cli scipts
+- AWS sdk
+- Amazon Cloud formation
+
+Sharing, Reproducibility, Multiple Deployments & Maintainability are all advantages of IaC.

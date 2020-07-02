@@ -22,7 +22,7 @@ Using the song and log datasets(json), you'll need to create a star schema optim
 4.**create_redshift_cluster.ipynb** is where you'll create redshift cluster and create an IAM role that has read access to S3.  
 5.**analytics.ipynb** to check the tables.  
 6.**analytics.py** another way to check the tables.  
-7.**README.md** is where you'll provide discussion on your process and decisions for this ETL pipeline.  
+7.**README.md** is where you'll provide discussion on your process and decisions for this ETL pipeline.      
 
 ## Project Steps
 ### Create Tables

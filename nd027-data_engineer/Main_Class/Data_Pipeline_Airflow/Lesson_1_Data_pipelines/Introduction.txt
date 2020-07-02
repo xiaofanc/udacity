@@ -1,0 +1,9 @@
+Airflow:
+
+Scheduler
+Queue
+Worker
+Database
+Webserver 
+
+Build a data pipeline in Airflow

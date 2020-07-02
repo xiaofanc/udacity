@@ -1,0 +1,5 @@
+why is Data Lakes?
+- unstructure data
+- needs from Data Scientists
+- schema-on-road
+

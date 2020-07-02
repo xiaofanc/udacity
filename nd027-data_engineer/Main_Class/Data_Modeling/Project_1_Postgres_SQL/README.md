@@ -2,7 +2,7 @@
 ## Introduction
 A startup called Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. The analytics team is particularly interested in understanding what songs users are listening to. 
 
-You need to create a database schema and write an ETL pipeline that transfers data from files in two local directories into these tables in Postgres using Python and SQL.
+I need to create a database schema and write an ETL pipeline that transfers data from files in two local directories into these tables in Postgres using Python and SQL.
 
 ## Schema for Song Play Analysis
 Using the song and log datasets(json), you'll need to create a star schema optimized for queries on song play analysis. This includes the following tables.

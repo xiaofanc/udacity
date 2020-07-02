@@ -1,0 +1,30 @@
+partition
+
+** Schedule partitioning
+Processing data based on a schedule or when it was created.
+Not only are schedules great for reducing the amount of data our pipelines have to process, but they also help us guarantee that we can meet timing guarantees that our data consumers may need.
+
+** Logical partition
+Breaking conceptually related data into discrete groups for processing.
+Conceptually related data can be partitioned into discrete segments and processed separately. This process of separating data based on its conceptual relationship is called logical partitioning. With logical partitioning, unrelated things belong in separate steps. 
+
+** location partition
+Processing data based on its location in a datastore.
+data location is another form of logical partitioning. 
+
+** size partition
+Separating data for processing based on desired or required storage limits.
+Size partitioning separates data for processing based on desired or required storage limits. 
+
+
+Why Data Partitioning?
+- easier to debug
+- parallelize execution
+
+
+Examples of Data Quality Requirements
+Data must be a certain size
+Data must be accurate to some margin of error
+Data must arrive within a given timeframe from the start of execution
+Pipelines must run on a particular schedule
+Data must not contain any sensitive information

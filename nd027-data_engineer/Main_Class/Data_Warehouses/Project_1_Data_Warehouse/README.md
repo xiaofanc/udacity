@@ -8,21 +8,21 @@ The task is to build an ETL pipeline that extracts their data from S3, stages th
 Using the song and log datasets(json), you'll need to create a star schema optimized for queries on song play analysis. This includes the following tables.
 
 ### Fact Table
-1.**songplays** - records in log data associated with song plays i.e. records with page NextSong (songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
+1. **songplays** - records in log data associated with song plays i.e. records with page NextSong (songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
 ### Dimension Tables
-2.**users** - users in the app (user_id, first_name, last_name, gender, level)   
-3.**songs** - songs in music database (song_id, title, artist_id, year, duration)  
-4.**artists** - artists in music database (artist_id, name, location, latitude, longitude)  
+2. **users** - users in the app (user_id, first_name, last_name, gender, level)   
+3. **songs** - songs in music database (song_id, title, artist_id, year, duration)  
+4. **artists** - artists in music database (artist_id, name, location, latitude, longitude)  
 5.**time** - timestamps of records in songplays broken down into specific units (start_time, hour, day, week, month, year, weekday)
 
 ## Project Template
-1.**create_table.py** is where you'll create your fact and dimension tables and staging tables for the star schema in Redshift.  
-2.**etl.py** is where you'll load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.  
-3.**sql_queries.py** is where you'll define you SQL statements, which will be imported into the two other files above.  
-4.**create_redshift_cluster.ipynb** is where you'll create redshift cluster and create an IAM role that has read access to S3.  
-5.**analytics.ipynb** to check the tables.  
-6.**analytics.py** another way to check the tables.  
-7.**README.md** is where you'll provide discussion on your process and decisions for this ETL pipeline.      
+1. **create_table.py** is where you'll create your fact and dimension tables and staging tables for the star schema in Redshift.  
+2. **etl.py** is where you'll load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.  
+3. **sql_queries.py** is where you'll define you SQL statements, which will be imported into the two other files above.  
+4. **create_redshift_cluster.ipynb** is where you'll create redshift cluster and create an IAM role that has read access to S3.  
+5. **analytics.ipynb** to check the tables.  
+6. **analytics.py** another way to check the tables.  
+7. **README.md** is where you'll provide discussion on your process and decisions for this ETL pipeline.      
 
 ## Project Steps
 ### Create Tables
@@ -39,11 +39,11 @@ Using the song and log datasets(json), you'll need to create a star schema optim
 * Delete your redshift cluster when finished.
 
 ### Validate the tables
-### Method 1:
+#### Method 1:
 * open the Amazon Redshift and use the database info to make a connection.
 * run query in Query Editor to check the tables.
-### Method 2:
+#### Method 2:
 * run analytics.ipynb
-### Method 3:
+#### Method 3:
 * run analytics.py in terminal
 

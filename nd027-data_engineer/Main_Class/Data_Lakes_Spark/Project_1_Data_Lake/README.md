@@ -18,11 +18,10 @@ And below is an example of what a single song file, TRAABJL12903CDCF1A.json, loo
 
 ### Log Dataset
 The log files in the dataset you'll be working with are partitioned by year and month. For example, here are filepaths to two files in this dataset.  
-'<log_data/2018/11/2018-11-12-events.json  
-log_data/2018/11/2018-11-13-events.json>'   
+> log_data/2018/11/2018-11-12-events.json  
+> log_data/2018/11/2018-11-13-events.json   
 
-
-![log_data](/image/log-data.png)
+![log_data](https://github.com/xiaofanc/udacity/blob/master/nd027-data_engineer/Main_Class/Data_Lakes_Spark/Project_1_Data_Lake/image/log-data.png?raw=true)
 
 ## Schema for Song Play Analysis
 Using the song and log datasets(json), I need to create a star schema optimized for queries on song play analysis. This includes the following tables.

@@ -18,8 +18,10 @@ And below is an example of what a single song file, TRAABJL12903CDCF1A.json, loo
 
 ### Log Dataset
 The log files in the dataset you'll be working with are partitioned by year and month. For example, here are filepaths to two files in this dataset.  
-> log_data/2018/11/2018-11-12-events.json  
-> log_data/2018/11/2018-11-13-events.json   
+'<log_data/2018/11/2018-11-12-events.json  
+log_data/2018/11/2018-11-13-events.json>'   
+
+
 ![log_data](/image/log-data.png)
 
 ## Schema for Song Play Analysis

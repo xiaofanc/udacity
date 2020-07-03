@@ -4,25 +4,29 @@ A music streaming startup, Sparkify, has grown their user base and song database
 
 The task is to build an ETL pipeline that extracts their data from S3, processes them using Spark, and loads the data back into S3 as a set of dimensional tables. This will allow their analytics team to continue finding insights in what songs their users are listening to.
 
+
 ## Project Datasets
 * Song data: 's3://udacity-dend/song_data'  
 * Log data: 's3://udacity-dend/log_data'  
 
-### Song Dataset
+
+#### Song Dataset
 The first dataset contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset.  
-> song_data/A/B/C/TRABCEI128F424C983.json
-> song_data/A/A/B/TRAABJL12903CDCF1A.json
+* song_data/A/B/C/TRABCEI128F424C983.json  
+* song_data/A/A/B/TRAABJL12903CDCF1A.json
 
 And below is an example of what a single song file, TRAABJL12903CDCF1A.json, looks like.  
 > {"num_songs": 1, "artist_id": "ARJIE2Y1187B994AB7", "artist_latitude": null, "artist_longitude": null, "artist_location": "", "artist_name": "Line Renaud", "song_id": "SOUPIRU12A6D4FA1E1", "title": "Der Kleine Dompfaff", "duration": 152.92036, "year": 0}
 
-### Log Dataset
+
+#### Log Dataset
 The log files in the dataset you'll be working with are partitioned by year and month. For example, here are filepaths to two files in this dataset.  
 > log_data/2018/11/2018-11-12-events.json  
 > log_data/2018/11/2018-11-13-events.json   
 
 And below is an example of what the data in a log file, 2018-11-12-events.json, looks like.  
 ![log_data](https://github.com/xiaofanc/udacity/blob/master/nd027-data_engineer/Main_Class/Data_Lakes_Spark/Project_1_Data_Lake/image/log-data.png?raw=true)
+
 
 ## Schema for Song Play Analysis
 Using the song and log datasets(json), I need to create a star schema optimized for queries on song play analysis. This includes the following tables.

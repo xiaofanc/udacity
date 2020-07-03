@@ -59,3 +59,6 @@ Using the song and log datasets(json), I need to create a star schema optimized 
 * Load tables into s3 in parquet format
 
 
+### How to run
+* Open terminal: python3 etl.py
+

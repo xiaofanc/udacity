@@ -11,12 +11,22 @@ The task is to build an ETL pipeline that extracts their data from S3, processes
 
 
 #### Song Dataset
-Below is an example of what a single song file, TRAABJL12903CDCF1A.json, looks like.  
+The first dataset contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset.  
+* song_data/A/B/C/TRABCEI128F424C983.json  
+* song_data/A/A/B/TRAABJL12903CDCF1A.json
+
+And below is an example of what a single song file, TRAABJL12903CDCF1A.json, looks like.  
 > {"num_songs": 1, "artist_id": "ARJIE2Y1187B994AB7", "artist_latitude": null, "artist_longitude": null, "artist_location": "", "artist_name": "Line Renaud", "song_id": "SOUPIRU12A6D4FA1E1", "title": "Der Kleine Dompfaff", "duration": 152.92036, "year": 0}
 
 
 #### Log Dataset
-Below is an example of what the data in a log file, 2018-11-12-events.json, looks like.  
+The log files in the dataset you'll be working with are partitioned by year and month. For example, here are filepaths to two files in this dataset.  
+> log_data/2018/11/2018-11-12-events.json  
+> log_data/2018/11/2018-11-13-events.json   
+
+And below is an example of what the data in a log file, 2018-11-12-events.json, looks like.  
+> {"artist":null,"auth":"Logged In","firstName":"Walter","gender":"M","itemInSession":0,"lastName":"Frye","length":null,"level":"free","location":"San Francisco-Oakland-Hayward, CA","method":"GET","page":"Home","registration":1540919166796.0,"sessionId":38,"song":null,"status":200,"ts":1541105830796,"userAgent":"\"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.143 Safari\/537.36\"","userId":"39"}
+
 ![log_data](https://github.com/xiaofanc/udacity/blob/master/nd027-data_engineer/Main_Class/Data_Lakes_Spark/Project_1_Data_Lake/image/log-data.png?raw=true)
 
 
@@ -33,7 +43,7 @@ Using the song and log datasets(json), I need to create a star schema optimized 
 * **time** - timestamps of records in songplays broken down into specific units (start_time, hour, day, week, month, year, weekday)
 
 ## Project Template
-* **etl.py** reads data from S3, processes that data using Spark, and writes them back to S3    
+* **etl.py** reads data from S3, processes that data using Spark, and writes them back to S3  
 * **dl.cfg** contains your AWS credentials    
 * **README.md** provides discussion on your process and decisions    
 

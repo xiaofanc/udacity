@@ -33,7 +33,7 @@ Using the song and log datasets(json), I need to create a star schema optimized 
 
 
 ### Fact Tables
-* **songplays** - records in log data associated with song plays i.e. records with page NextSong (songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
+* **songplays** - records in log data associated with song plays i.e. records with page NextSong (songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent, month, year)
 ### Dimension Tables
 * **users** - users in the app (user_id, first_name, last_name, gender, level)   
 * **songs** - songs in music database (song_id, title, artist_id, year, duration)  
@@ -43,6 +43,7 @@ Using the song and log datasets(json), I need to create a star schema optimized 
 
 ## Project Template
 * **etl.py** reads data from S3, processes that data using Spark, and writes them back to S3  
+* **etl.ipynb** test run for small data
 * **dl.cfg** contains your AWS credentials    
 * **README.md** provides discussion on your process and decisions    
 

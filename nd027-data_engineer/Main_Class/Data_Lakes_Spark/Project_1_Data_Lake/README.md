@@ -32,7 +32,7 @@ And below is an example of what the data in a log file, 2018-11-12-events.json, 
 Using the song and log datasets(json), I need to create a star schema optimized for queries on song play analysis. This includes the following tables.
 
 
-### Fact Table
+### Fact and Dimension Tables
 * **songplays** - records in log data associated with song plays i.e. records with page NextSong (songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
 ### Dimension Tables
 * **users** - users in the app (user_id, first_name, last_name, gender, level)   
@@ -40,31 +40,21 @@ Using the song and log datasets(json), I need to create a star schema optimized 
 * **artists** - artists in music database (artist_id, name, location, latitude, longitude)  
 * **time** - timestamps of records in songplays broken down into specific units (start_time, hour, day, week, month, year, weekday)
 
+
 ## Project Template
 * **etl.py** reads data from S3, processes that data using Spark, and writes them back to S3  
 * **dl.cfg** contains your AWS credentials    
 * **README.md** provides discussion on your process and decisions    
 
+
 ## Project Steps
-### Create Tables
-* Write CREATE/DROP statements in sql_queries.py to specify all columns for each of the five tables with the right data types and conditions. Also specify the staging tables, and describe how to generate staging tables from files on s3.
-* Launch a redshift cluster and create an IAM role that has read access to S3 in create_redshift_cluster.ipynb.
-* Add redshift database and IAM role info to dwh.cfg.
-* Complete the logic in create_tables.py to connect to the database and create these tables.
-* Test by running create_tables.py and checking the table schemas in your redshift database. You can use Query Editor in the AWS Redshift console for this.
+### Create user on AWS
+* get the access key and secret key, and put it into dl.cfg
+
 
 ### Build ETL Pipeline
-* Implement the logic in etl.py to load data from S3 to staging tables on Redshift.
-* Implement the logic in etl.py to load data from staging tables to analytics tables on Redshift.
-* Test by running etl.py after running create_tables.py and running the analytic queries on your Redshift database to compare your results with the expected results.
-* Delete your redshift cluster when finished.
+* Implement the logic in etl.py to extract data from s3 
+* Transform data into fact and dimension tables
+* Load tables into s3 in parquet format
 
-### Validate the tables
-#### Method 1:
-* open the Amazon Redshift and use the database info to make a connection.
-* run query in Query Editor to check the tables.
-#### Method 2:
-* run analytics.ipynb
-#### Method 3:
-* run analytics.py in terminal
 

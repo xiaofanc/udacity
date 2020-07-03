@@ -21,8 +21,8 @@ And below is an example of what a single song file, TRAABJL12903CDCF1A.json, loo
 
 #### Log Dataset
 The log files in the dataset you'll be working with are partitioned by year and month. For example, here are filepaths to two files in this dataset.  
-* log_data/2018/11/2018-11-12-events.json  
-* log_data/2018/11/2018-11-13-events.json   
+* log_data/2018/11/2018-11-12-events.json   
+* log_data/2018/11/2018-11-13-events.json     
 
 And below is an example of what the data in a log file, 2018-11-12-events.json, looks like.  
 > {"artist":null,"auth":"Logged In","firstName":"Walter","gender":"M","itemInSession":0,"lastName":"Frye","length":null,"level":"free","location":"San Francisco-Oakland-Hayward, CA","method":"GET","page":"Home","registration":1540919166796.0,"sessionId":38,"song":null,"status":200,"ts":1541105830796,"userAgent":"\"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.143 Safari\/537.36\"","userId":"39"}

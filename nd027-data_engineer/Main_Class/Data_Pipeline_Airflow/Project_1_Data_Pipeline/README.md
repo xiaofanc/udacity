@@ -62,6 +62,12 @@ Port: Enter 5439.
 Configure the task dependencies so that after the dependencies are set, the graph view follows the flow shown in the image below.
 
 ![log_data](https://github.com/xiaofanc/udacity/blob/master/nd027-data_engineer/Main_Class/Data_Pipeline_Airflow/Project_1_Data_Pipeline/image/example-dag.png?raw=true)
+        
+Briefly talking about the ELT process:  
+* Stage the raw data from s3 to redshift  
+* Transform the raw data to the songplays fact table  
+* Trandform the raw data to the dimension tables  
+* Check the data quality for fact and fimension tables  
 
 
 ### 4. Build the operators

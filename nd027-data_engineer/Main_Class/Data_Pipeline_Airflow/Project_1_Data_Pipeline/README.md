@@ -37,10 +37,10 @@ And below is an example of what the data in a log file, 2018-11-12-events.json, 
 
 
 ## Project Steps
-### Create user and launch a redshift cluster on AWS
+1. Create user and launch a redshift cluster on AWS
 
 
-### Add Airflow Connections
+2. Add Airflow Connections
 #### Configure AWS credentials
 * Conn Id: Enter aws_credentials.  
 * Conn Type: Enter Amazon Web Services.  
@@ -58,12 +58,12 @@ And below is an example of what the data in a log file, 2018-11-12-events.json, 
 Port: Enter 5439.  
 
 
-### Configuring the DAG
-#### configure the task dependencies
+3. Configuring the DAG
+#### configure the task dependencies  
+![log_data](https://github.com/xiaofanc/udacity/blob/master/nd027-data_engineer/Main_Class/Data_Pipeline_Airflow/Project_1_Data_Pipeline/image/example-dag.png?raw=true)
 
 
-
-### Building the operators
+4. Building the operators
 #### Stage Operator
 
 #### Fact and Dimension Operators
@@ -73,6 +73,6 @@ Port: Enter 5439.
 
 
 
-### How to run
+5. How to run
 
 

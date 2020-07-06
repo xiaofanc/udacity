@@ -1,8 +1,30 @@
-# Data Modeling with Postgres
+# Data Warehouse on AWS
 ## Introduction
 A music streaming startup, Sparkify, has grown their user base and song database and want to move their processes and data onto the cloud. Their data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
 
 The task is to build an ETL pipeline that extracts their data from S3, stages them in Redshift, and transforms data into a set of dimensional tables for their analytics team to continue finding insights in what songs their users are listening to.
+
+
+## Project Datasets
+* Song data: 's3://udacity-dend/song_data'  
+* Log data: 's3://udacity-dend/log_data'  
+
+#### Song Dataset
+The first dataset contains metadata about a song and the artist of that song. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to two files in this dataset.  
+* song_data/A/B/C/TRABCEI128F424C983.json  
+* song_data/A/A/B/TRAABJL12903CDCF1A.json
+
+And below is an example of what a single song file, TRAABJL12903CDCF1A.json, looks like.  
+> {"num_songs": 1, "artist_id": "ARJIE2Y1187B994AB7", "artist_latitude": null, "artist_longitude": null, "artist_location": "", "artist_name": "Line Renaud", "song_id": "SOUPIRU12A6D4FA1E1", "title": "Der Kleine Dompfaff", "duration": 152.92036, "year": 0}
+
+#### Log Dataset
+The log files in the dataset you'll be working with are partitioned by year and month. For example, here are filepaths to two files in this dataset.  
+* log_data/2018/11/2018-11-12-events.json   
+* log_data/2018/11/2018-11-13-events.json     
+
+And below is an example of what the data in a log file, 2018-11-12-events.json, looks like.  
+> {"artist":null,"auth":"Logged In","firstName":"Walter","gender":"M","itemInSession":0,"lastName":"Frye","length":null,"level":"free","location":"San Francisco-Oakland-Hayward, CA","method":"GET","page":"Home","registration":1540919166796.0,"sessionId":38,"song":null,"status":200,"ts":1541105830796,"userAgent":"\"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.143 Safari\/537.36\"","userId":"39"}
+
 
 ## Schema for Song Play Analysis
 Using the song and log datasets(json), you'll need to create a star schema optimized for queries on song play analysis. This includes the following tables.
@@ -13,7 +35,8 @@ Using the song and log datasets(json), you'll need to create a star schema optim
 2. **users** - users in the app (user_id, first_name, last_name, gender, level)   
 3. **songs** - songs in music database (song_id, title, artist_id, year, duration)  
 4. **artists** - artists in music database (artist_id, name, location, latitude, longitude)  
-5.**time** - timestamps of records in songplays broken down into specific units (start_time, hour, day, week, month, year, weekday)
+5. **time** - timestamps of records in songplays broken down into specific units (start_time, hour, day, week, month, year, weekday)
+
 
 ## Project Template
 1. **create_table.py** is where you'll create your fact and dimension tables and staging tables for the star schema in Redshift.  
@@ -23,6 +46,7 @@ Using the song and log datasets(json), you'll need to create a star schema optim
 5. **analytics.ipynb** to check the tables.  
 6. **analytics.py** another way to check the tables.  
 7. **README.md** is where you'll provide discussion on your process and decisions for this ETL pipeline.      
+
 
 ## Project Steps
 ### Create Tables

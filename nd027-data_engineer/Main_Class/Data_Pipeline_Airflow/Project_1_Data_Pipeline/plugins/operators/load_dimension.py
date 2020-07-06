@@ -34,8 +34,10 @@ class LoadDimensionOperator(BaseOperator):
             - truncate: clean table before loading
             - select_query: select query from SqlQueries
         """
+
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
         
+        # table exists
         if self.truncate:
             redshift.run(f"TRUNCATE TABLE {self.table}")
             

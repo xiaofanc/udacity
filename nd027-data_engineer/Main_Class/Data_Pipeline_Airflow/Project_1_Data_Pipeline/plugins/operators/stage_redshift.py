@@ -54,10 +54,12 @@ class StageToRedshiftOperator(BaseOperator):
                     * Song data: 's3://udacity-dend/song_data/A/B/C/TRABCEI128F424C983.json'  
                     * Log data: 's3://udacity-dend/log_data/2018/11/2018-11-12-events.json'  
         """
+        
         aws_hook = AwsHook(self.aws_credentials_id)
         credentials = aws_hook.get_credentials()
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
 
+        # table exists
         self.log.info("Clearing data from destination Redshift table")
         redshift.run("DELETE FROM {}".format(self.table))
 

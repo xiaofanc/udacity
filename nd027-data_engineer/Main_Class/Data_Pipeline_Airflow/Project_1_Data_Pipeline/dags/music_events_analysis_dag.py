@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 import os
 from airflow import DAG
+from airflow.operators.postgres_operator import PostgresOperator
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators import (StageToRedshiftOperator, LoadFactOperator,
                                 LoadDimensionOperator, DataQualityOperator)
@@ -28,6 +29,13 @@ dag = DAG('music_events_analysis_dag',
         )
 
 start_operator = DummyOperator(task_id='Begin_execution',  dag=dag)
+
+create_tables=PostgresOperator(
+    task_id='create_tables',
+    dag=dag,
+    postgres_conn_id='redshift',
+    sql='create_tables.sql'
+)
 
 # staging table from s3 to redshift
 stage_events_to_redshift = StageToRedshiftOperator(

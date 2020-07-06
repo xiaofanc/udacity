@@ -33,3 +33,6 @@ $ git reset --mixed HEAD
 
 git rm --cached new-git-project -f
 romove from staging area
+
+git co Data_Pipeline_Airflow/Project_1_Data_Pipeline/image/start-dag.png
+copy from github

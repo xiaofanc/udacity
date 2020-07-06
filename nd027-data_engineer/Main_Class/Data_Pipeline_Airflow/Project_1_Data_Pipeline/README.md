@@ -38,6 +38,7 @@ And below is an example of what the data in a log file, 2018-11-12-events.json, 
 
 ## Project Steps
 ### 1. Create user and launch a redshift cluster on AWS
+create tables on redshift - use data warehouse project
 
 
 ### 2. Add Airflow Connections
@@ -88,5 +89,5 @@ The final operator to create is the data quality operator, which is used to run 
 
 
 ### 5. How to run
-Run the DAG in Airfow and check the results
+Run the DAG in Airfow and check the results on redshift
 

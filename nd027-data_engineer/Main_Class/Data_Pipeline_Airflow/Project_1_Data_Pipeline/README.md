@@ -38,7 +38,6 @@ And below is an example of what the data in a log file, 2018-11-12-events.json, 
 
 ## Project Steps
 ### 1. Create user and launch a redshift cluster on AWS
-create tables on redshift - use data warehouse project or create_tables.sql  
 
 
 ### 2. Add Airflow Connections

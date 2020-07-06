@@ -54,7 +54,7 @@ class StageToRedshiftOperator(BaseOperator):
                     * Song data: 's3://udacity-dend/song_data/A/B/C/TRABCEI128F424C983.json'  
                     * Log data: 's3://udacity-dend/log_data/2018/11/2018-11-12-events.json'  
         """
-        
+
         aws_hook = AwsHook(self.aws_credentials_id)
         credentials = aws_hook.get_credentials()
         redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
@@ -67,7 +67,7 @@ class StageToRedshiftOperator(BaseOperator):
 
         s3_path = "s3://{}/{}".format(self.s3_bucket, self.s3_key)
         if self.execution_date:
-            # Backfill a specific date
+            # Get the year and month for the path
             year = self.execution_date.strftime("%Y")
             month = self.execution_date.strftime("%m")
             s3_path = '/'.join([s3_path, str(year), str(month)])

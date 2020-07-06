@@ -80,4 +80,4 @@ class StageToRedshiftOperator(BaseOperator):
         )
         redshift.run(formatted_sql)
 
-        self.log.info(f"Success: Copying {self.table} from S3 to Redshift")
+        

@@ -1,5 +1,19 @@
+
+"
+
+SELECT
+FROM
+WHERE
+GROUP BY
+HAVING
+ORDER BY 
+
 # having should be after group by (aggregation), and before order by
 # where appears after from, join, and on, but before group by
+# difference between having and where: 
+# The main difference between WHERE and HAVING clause comes when used together with GROUP BY clause, In that case WHERE is used to filter rows before grouping and HAVING is used to exclude records after grouping.
+
+"
 
 --How many of the sales reps have more than 5 accounts that they manage?
 select s.name, count(*) from sales_reps s inner join accounts a on a.

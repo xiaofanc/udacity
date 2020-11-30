@@ -17,7 +17,7 @@ insert into address (id, street, city, state)
 values
     (1, '768 main street', 'chicago', 'IL')
 on conflict (id)
-do nothing;
+do nothing; // do not change anything
 
 insert into address (id, street, city, state) 
 values
